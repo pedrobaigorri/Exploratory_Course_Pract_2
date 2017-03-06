@@ -4,6 +4,10 @@
 ## Description: Course_Project 2: Exloratory Data Analysis
 ## https://www.coursera.org/learn/exploratory-data-analysis/peer/b5Ecl/course-project-2
 ##
+## Exercise: Have total emissions from PM2.5 decreased in the United States from 1999 
+##           to 2008? Using the base plotting system, make a plot showing the total PM2.5 
+##           emission from all sources for each of the years 1999, 2002, 2005, and 2008.
+##
 ## Author: Pedro A. Alonso Baigorri
 ##############################################################################
 
