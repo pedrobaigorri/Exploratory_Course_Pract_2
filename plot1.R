@@ -49,6 +49,6 @@ head(a)
 
 # drawing the plot 
 png(file = "plot1.png", width=480, height=480)
-plot(a$year, a$Emissions,  ylab = "Total Emissions", xlab = "year", main ="Yearly evolution of PM2.5 emissions", type="h")
+barplot(a$Emissions, names.arg=a$year,  ylab = "Total Emissions", xlab = "year", main ="Yearly evolution of PM2.5 emissions")
 dev.off()
 
