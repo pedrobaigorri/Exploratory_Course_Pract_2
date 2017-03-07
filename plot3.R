@@ -1,5 +1,5 @@
 ##############################################################################
-## File: plot1.R
+## File: plot3.R
 ##
 ## Description: Course_Project 2: Exloratory Data Analysis
 ## https://www.coursera.org/learn/exploratory-data-analysis/peer/b5Ecl/course-project-2
@@ -53,7 +53,9 @@ a <- aggregate(Emissions ~ year + type , data = bal, FUN = sum)
 
 # drawing the plot 
 png(file = "plot3.png", width=480, height=480)
-qplot(year, Emissions, data = a, geom = "line", color = type)
-#barplot(a$Emissions, names.arg=a$year,  ylab = "Total Emissions", xlab = "year", main ="Yearly evolution of PM2.5 emissions in Baltimore")
+
+ggplot(data=a, aes(x=type, y=Emissions, fill=year)) + geom_bar(stat="identity", position=position_dodge(), colour="black") + 
+    ggtitle("Evolution of PM2.5 Emissions for Baltimore per Source Type")
+
 dev.off()
 
