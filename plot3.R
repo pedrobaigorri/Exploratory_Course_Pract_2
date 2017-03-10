@@ -41,9 +41,6 @@ if (!file.exists(localFile))
 NEI <- readRDS("./data/summarySCC_PM25.rds")
 SCC <- readRDS("./data/Source_Classification_Code.rds")
 
-#converting year
-NEI$year <- as.factor(NEI$year)
-
 # Filtering for Baltimore
 bal <- subset(NEI, fips == "24510") 
 
@@ -54,7 +51,8 @@ a <- aggregate(Emissions ~ year + type , data = bal, FUN = sum)
 # drawing the plot 
 png(file = "plot3.png", width=480, height=480)
 
-ggplot(data=a, aes(x=type, y=Emissions, fill=year)) + geom_bar(stat="identity", position=position_dodge(), colour="black") + 
+ggplot(data=a, aes(x=year, y=Emissions, colour=type)) + 
+    geom_line() + geom_point() + 
     ggtitle("Evolution of PM2.5 Emissions for Baltimore per Source Type")
 
 dev.off()
